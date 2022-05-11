@@ -1,0 +1,530 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.homeContainer {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(-45deg, rgb(207, 128, 8), rgba(248, 175, 78, 0.836), rgb(226, 102, 0), rgb(228, 115, 23));
+    background-size: 400% 400%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: backgroundTransition 5s ease-in-out infinite;
+}
+
+.homeTitulo {
+    font-size: 40px;
+    font-weight: 400;
+    font-family: 'Rock 3D', cursive;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.homeSubtitulo {
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Josefin Sans', sans-serif
+}
+
+.socialMedia {
+    margin-top: 1rem;
+    display: flex;
+}
+
+.socialMedia a {
+    font-weight: 300;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    padding: 1rem 4rem;
+    border: 1px solid black;
+    min-width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s cubic-bezier(0.5, 0.025, 0.675, 0.97);
+}
+
+.socialMedia a:nth-child(1) {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.socialMedia a:nth-child(2) {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.socialMedia a:hover {
+    color: white;
+    background-color: black;
+}
+
+@keyframes backgroundTransition {
+    0% {
+        background-position: 0% 80%;
+    }
+
+    50% {
+        background-position: 80% 100%;
+    }
+
+    100% {
+        background-position: 0% 90%;
+    }
+}
+
+/*------------------- MENU HAMBURGUER ------------ */
+
+.menuHamburguerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuHamburguerTraces {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menuHamburguerTraces .menuHamburguerTrace {
+    width: 45px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.menuHamburguerTraces .menuHamburguerTrace:nth-child(1) {
+    top: 24px;
+    transform: rotate(0);
+}
+
+
+.menuHamburguerTraces .menuHamburguerTrace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+}
+
+
+.menuHamburguerTraces .menuHamburguerTrace:nth-child(3) {
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+}
+
+.menu {
+    position: fixed;
+    top: 28px;
+    right: 30px;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    box-shadow: 0px 0px 0px 0px white;
+    border-radius: 50%;
+    z-index: -1;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menuItens {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: 400ms ease-in-out 0s;
+}
+
+.menuItens ul {
+    list-style: none;
+}
+
+.menuItens ul li a {
+    margin: 10px 0px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 40px;
+    padding: 10px;
+}
+
+#toggle:checked+.menuHamburguerTraces .menuHamburguerTrace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47px;
+    background-color: rgb(226, 102, 0);
+}
+
+
+#toggle:checked+.menuHamburguerTraces .menuHamburguerTrace:nth-child(2) {
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgb(226, 102, 0);
+}
+
+#toggle:checked+.menuHamburguerTraces .menuHamburguerTrace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+    background-color: rgb(226, 102, 0);
+}
+
+#toggle:checked+.menuHamburguerTraces {
+    background-color: white;
+}
+
+#toggle:checked+label .menu {
+    box-shadow: 0px 0px 0px 100vmax white;
+    z-index: 1;
+}
+
+
+#toggle:checked+label .menuItens {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*--------------- CONFIGURACOES GERAIS DAS SECOES ---------------*/
+
+.secaoTitulo {
+    display: flex;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgb(109, 109, 109);
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.secaoText {
+    width: 40%;
+    height: auto;
+    padding: 20px;
+    text-align: justify;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: rgb(109, 109, 109);
+}
+
+/* --------------- ABOUT ---------------*/
+
+.aboutContainer {
+    width: 100vw;
+    height: auto;
+    background-color: rgb(247, 241, 221);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.aboutConteudo {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.aboutImg {
+    width: 400px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.aboutText {
+    width: 500px;
+    text-align: justify;
+    padding: 20px;
+
+}
+
+/* --------------- CARDS -------------- */
+
+.cardsContainer {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cardCapa {
+    height: 300px;
+    width: 500px;
+    font-weight: bold;
+    margin: 3rem 0 0;
+    background-image: url(image-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(0.5);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+}
+
+.cardCapa:hover {
+    filter: unset;
+}
+
+.card1 {
+    background-image: url(imagens/projeto1.gif);
+}
+
+.card2 {
+    background-image: url(imagens/projeto2.gif);
+}
+
+.card3 {
+    background-image: url(imagens/projeto3.gif);
+}
+
+
+.cardTitulo {
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    transition: 0.3s;
+    background-color: black;
+}
+
+.cardSubtitulo {
+    font-size: 0;
+    visibility: hidden;
+    opacity: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 20px;
+    background-color: black;
+}
+
+
+
+.cardCapa:hover>.cardCapa::before {
+    width: 450px;
+    height: 250px;
+    opacity: 1;
+}
+
+
+.cardCapa:hover>.cardSubtitulo {
+    opacity: 1;
+    visibility: visible;
+    font-size: 14px;
+}
+
+/* --------------- CURRICULO -------------- */
+.curriculoContainer {
+    height: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(247, 241, 221, 0.582);
+    padding-bottom: 20px;
+}
+
+.curriculoDownload {
+    background-color: black;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 18px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+
+/* --------------- FOOTER -------------- */
+
+footer {
+    height: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: rgb(255, 190, 68);
+    color: rgb(109, 109, 109);
+}
+
+.footerCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.footerContatoText {
+    margin: 20px 0 0 20px;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+.footerIcons {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.footerIcons a {
+    text-decoration: none;
+    color: rgb(109, 109, 109);
+}
+
+.footerMessage {
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* --------------- RESPONSIVO -------------- */
+
+@media (max-width:820px) {
+    .homeTitulo {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .homeSubtitulo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .socialMedia {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .socialMedia a:nth-child(1) {
+        border-radius: 10px 10px 10px 10px;
+        font-size: 20px;
+    }
+
+    .socialMedia a:nth-child(2) {
+        border-radius: 10px 10px 10px 10px;
+        font-size: 20px;
+    }
+
+    .aboutConteudo {
+        flex-direction: column;
+        margin: 10px;
+        width: 90%;
+    }
+
+    .secaoText {
+        width: 100%;
+    }
+
+    .aboutImg {
+        width: 200px;
+    }
+
+    .cardsContainer {
+        margin-top: 0;
+    }
+
+    .cardContainer {
+        flex-direction: column;
+    }
+
+    .cardsContainer .cardContainer:nth-child(1),
+    .cardsContainer .cardContainer:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+
+    .card {
+        height: 250px;
+        width: 250px;
+    }
+
+    .cardCapa {
+        height: 200px;
+        width: 300px;
+    }
+
+    .cardText {
+        width: 90%;
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    .card:hover>.cardWrapper::before {
+        height: 190px;
+        width: 190px;
+    }
+
+    .footerContato {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+}
